@@ -1,0 +1,26 @@
+{
+  "providers": {
+    "ollama": {
+      "baseUrl": "http://ollama:11434/v1",
+      "api": "openai-completions",
+      "apiKey": "ollama",
+      "models": [
+        {
+          "id": "phi4-mini"
+        },
+        {
+          "id": "gemma4:e2b-it-q4_K_M"
+        },
+        {
+          "id": "gemma4:e4b-it-q4_K_M"
+        },
+        {
+          "id": "gemma4:31b-it-q4_K_M"
+        },
+        {
+          "id": "gemma4:26b-a4b-it-q4_K_M"
+        }
+      ]
+    }
+  }
+}

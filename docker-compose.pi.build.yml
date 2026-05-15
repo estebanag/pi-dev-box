@@ -1,0 +1,29 @@
+services:
+  pi:
+    build:
+      context: .
+      dockerfile: Dockerfile.pi
+      args:
+        USER_UID: ${DOCKER_UID:-1000}
+        USER_GID: ${DOCKER_GID:-1000}
+    container_name: pi
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /home/ubuntu/.cache/uv
+      - /home/ubuntu/.local/share/nvim
+      - /home/ubuntu/.local/state/nvim
+      - /home/ubuntu/.cache/nvim
+    networks:
+      - pi_net
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stdin_open: true
+    tty: true
+
+networks:
+  pi_net:
+    driver: bridge
+    internal: true

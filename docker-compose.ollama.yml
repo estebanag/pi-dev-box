@@ -1,0 +1,45 @@
+x-ollama-image: &ollama-image ollama/ollama:0.23.2
+
+services:
+  ollama:
+    image: *ollama-image
+    container_name: ollama
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - pi_net
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  ollama-pull:
+    image: *ollama-image
+    profiles:
+      - pull
+    volumes:
+      - ollama_data:/root/.ollama
+      - ./scripts/ollama-pull.sh:/ollama-pull.sh:ro
+    networks:
+      - ollama_ext
+    entrypoint: ["/ollama-pull.sh"]
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  ollama_data:
+
+networks:
+  pi_net:
+    driver: bridge
+    internal: true
+  ollama_ext:
+    driver: bridge

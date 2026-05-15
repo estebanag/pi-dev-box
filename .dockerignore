@@ -1,0 +1,6 @@
+pi-config/
+scripts/ollama-pull.sh
+docker-compose*.yml
+README.md
+.env
+.git/

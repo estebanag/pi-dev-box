@@ -1,0 +1,17 @@
+include:
+  - docker-compose.ollama.yml
+  - docker-compose.pi.build.yml
+
+services:
+  pi:
+    depends_on:
+      ollama:
+        condition: service_healthy
+    volumes:
+      - ${WORKSPACE_DIR:?WORKSPACE_DIR must be set in .env}:/workspace
+      - ./pi-config:/home/ubuntu/.pi-defaults:ro
+      - pi_agents:/home/ubuntu/.pi
+    working_dir: /workspace
+
+volumes:
+  pi_agents:

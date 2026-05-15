@@ -1,0 +1,55 @@
+FROM ubuntu:24.04
+ENV DEBIAN_FRONTEND=noninteractive
+
+ARG USER_UID=1000
+ARG USER_GID=1000
+
+# --- System packages ---
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    ripgrep \
+    build-essential \
+    python3-pip \
+    python3-venv \
+    unzip \
+    locales \
+    fd-find \
+  && rm -rf /var/lib/apt/lists/*
+
+# --- Node.js ---
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+  && apt-get install -y nodejs \
+  && rm -rf /var/lib/apt/lists/*
+
+# --- pi ---
+RUN npm install -g @earendil-works/pi-coding-agent@0.74.0
+
+ENV EDITOR=nvim
+
+# --- nvim ---
+RUN curl -fLO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz \
+  && tar -C /opt -xzf nvim-linux-x86_64.tar.gz \
+  && rm nvim-linux-x86_64.tar.gz
+
+ENV PATH="${PATH}:/opt/nvim-linux-x86_64/bin"
+
+# --- UV ---
+RUN su -c 'curl -LsSf https://astral.sh/uv/install.sh | sh' ubuntu
+
+ENV PATH="${PATH}:/home/ubuntu/.local/bin"
+
+# --- Remap the ubuntu user/group to match the host UID/GID ---
+RUN mkdir -p /home/ubuntu/.pi \
+  && groupmod -g "${USER_GID}" ubuntu \
+  && usermod -u "${USER_UID}" -g "${USER_GID}" ubuntu \
+  && chown -R ubuntu:ubuntu /home/ubuntu
+
+# --- Do the rest ---
+ENV HOME=/home/ubuntu
+
+COPY --chmod=0755 scripts/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
+USER ubuntu
+
+ENTRYPOINT ["docker-entrypoint.sh"]
