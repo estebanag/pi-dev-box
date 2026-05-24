@@ -6,12 +6,10 @@
       "apiKey": "ollama",
       "models": [
         {
-          "id": "qwen3-coder-next",
-          "reasoning": true
+          "id": "qwen3-coder-next"
         },
         {
-          "id": "qwen3-coder-next:q8_0",
-          "reasoning": true
+          "id": "qwen3-coder-next:q8_0"
         },
         {
           "id": "gemma4:e2b-it-q4_K_M"
