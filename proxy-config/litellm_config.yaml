@@ -32,15 +32,16 @@ model_list:
       model: gemini/gemini-2.5-pro
       api_key: os.environ/GEMINI_API_KEY
 
-  # --- GitHub Copilot ---
-  - model_name: copilot-gpt-5.5
+  # --- ChatGPT ---
+  - model_name: chatgpt-codex-5-3
     litellm_params:
-      model: openai/gpt-5.5
-      api_base: https://api.githubcopilot.com
-      api_key: os.environ/GITHUB_TOKEN
+      model: chatgpt/gpt-5.3-codex
+
+  # --- GitHub Copilot ---
+  - model_name: copilot-gpt-5-5
+    litellm_params:
+      model: github_copilot/gpt-5.5
 
   - model_name: copilot-claude-sonnet-4-6
     litellm_params:
-      model: anthropic/claude-sonnet-4-6
-      api_base: https://api.githubcopilot.com
-      api_key: os.environ/GITHUB_TOKEN
+      model: github_copilot/claude-sonnet-4.6

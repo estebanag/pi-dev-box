@@ -104,6 +104,10 @@ cp .env.proxy.example .env.proxy
 ```sh
 docker compose -f docker-compose.proxy.yml -f docker-compose.pi.yml run --rm pi
 ```
+If you need to authenticate your device, see the output of:
+```sh
+docker logs -f litellm
+```
 
 ## 4. Stop and remove containers
 ```sh

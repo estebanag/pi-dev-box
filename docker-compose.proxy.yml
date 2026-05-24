@@ -7,6 +7,7 @@ services:
     command: ["--config", "/app/litellm_config.yaml", "--port", "4000"]
     volumes:
       - ./proxy-config/litellm_config.yaml:/app/litellm_config.yaml:ro
+      - litellm_data:/root/.config/litellm
     env_file:
       - path: .env.proxy
         required: false
@@ -25,13 +26,16 @@ services:
         - "import urllib.request; urllib.request.urlopen('http://localhost:4000/health/liveliness')"
       interval: 15s
       timeout: 10s
-      retries: 5
+      retries: 15
       start_period: 30s
 
   pi:
     depends_on:
       litellm:
         condition: service_healthy
+
+volumes:
+  litellm_data:
 
 networks:
   pi_net:

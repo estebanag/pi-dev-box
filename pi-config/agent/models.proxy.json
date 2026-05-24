@@ -24,7 +24,10 @@
           "id": "gemini-2.5-pro"
         },
         {
-          "id": "copilot-gpt-5.5"
+          "id": "chatgpt-codex-5-3"
+        },
+        {
+          "id": "copilot-gpt-5-5"
         },
         {
           "id": "copilot-claude-sonnet-4-6"
