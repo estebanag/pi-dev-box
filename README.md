@@ -17,11 +17,7 @@ workspace directory).
 ## 1. Start Ollama and pull local model(s)
 Pull whichever models you want to use:
 ```sh
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull phi4-mini
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull gemma4:e2b-it-q4_K_M
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull gemma4:e4b-it-q4_K_M
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull gemma4:26b-a4b-it-q4_K_M
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull gemma4:31b-it-q4_K_M
+docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull [MODEL-NAME]
 ```
 
 ## 2. Build pi
