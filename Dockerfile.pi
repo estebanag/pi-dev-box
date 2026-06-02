@@ -35,7 +35,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
   && rm -rf /var/lib/apt/lists/*
 
 # --- pi ---
-RUN npm install -g @earendil-works/pi-coding-agent@0.75.5
+RUN npm install -g @earendil-works/pi-coding-agent@0.78.0
 
 ENV EDITOR=nvim
 
