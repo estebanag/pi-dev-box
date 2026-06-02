@@ -1,4 +1,4 @@
 {
   "defaultProvider": "ollama",
-  "defaultModel": "gemma4:e2b-it-q4_K_M"
+  "defaultModel": "gemma4:26b-a4b-it-q8_0"
 }
