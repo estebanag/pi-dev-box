@@ -18,6 +18,11 @@ RUN apt-get update && apt-get install -y \
     fd-find \
   && rm -rf /var/lib/apt/lists/*
 
+# --- HDF5 tools ---
+RUN apt-get update && apt-get install -y \
+    hdf5-tools \
+  && rm -rf /var/lib/apt/lists/*
+
 # --- Java ---
 RUN apt-get update && apt-get install -y \
     maven \
