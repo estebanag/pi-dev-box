@@ -9,7 +9,23 @@
           "id": "qwen3-coder-next:q8_0"
         },
         {
+          "id": "qwen3.6:35b-a3b-q8_0",
+          "reasoning": true
+        },
+        {
+          "id": "qwen3.6:35b-a3b-q4_K_M",
+          "reasoning": true
+        },
+        {
+          "id": "qwen3.6:27b-q8_0",
+          "reasoning": true
+        },
+        {
           "id": "gemma4:26b-a4b-it-q8_0",
+          "reasoning": true
+        },
+        {
+          "id": "gemma4:26b-a4b-it-q4_K_M",
           "reasoning": true
         },
         {
@@ -17,7 +33,7 @@
           "reasoning": true
         },
         {
-          "id": "gemma4:31b-it-bf16",
+          "id": "gemma4:31b-it-q4_K_M",
           "reasoning": true
         }
       ]
