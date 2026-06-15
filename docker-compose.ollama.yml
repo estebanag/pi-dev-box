@@ -1,4 +1,4 @@
-x-ollama-image: &ollama-image ollama/ollama:0.23.2
+x-ollama-image: &ollama-image ollama/ollama:0.30.8
 
 services:
   ollama:
