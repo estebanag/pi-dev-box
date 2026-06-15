@@ -25,7 +25,7 @@
           "reasoning": true
         },
         {
-          "id": "gemma4:26b-a4b-it-q4_K_M",
+          "id": "gemma4:26b-a4b-it-qat",
           "reasoning": true
         },
         {
@@ -33,7 +33,11 @@
           "reasoning": true
         },
         {
-          "id": "gemma4:31b-it-q4_K_M",
+          "id": "gemma4:31b-it-qat",
+          "reasoning": true
+        },
+        {
+          "id": "gemma4:12b-it-qat",
           "reasoning": true
         }
       ]
