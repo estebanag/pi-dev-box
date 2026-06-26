@@ -21,6 +21,10 @@
           "reasoning": true
         },
         {
+          "id": "qwen3.6:27b-q4_K_M",
+          "reasoning": true
+        },
+        {
           "id": "gemma4:26b-a4b-it-q8_0",
           "reasoning": true
         },
