@@ -53,6 +53,13 @@ in this shared directory!
 WORKSPACE_DIR=/path/to/your/project
 ```
 
+### Tune Ollama
+Create `.env.ollama`:
+
+```sh
+cp .env.ollama.example .env.ollama
+```
+
 ## 3. Run pi with Ollama
 ```sh
 docker compose -f docker-compose.pi.yml run --rm pi

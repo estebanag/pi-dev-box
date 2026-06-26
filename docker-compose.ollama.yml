@@ -6,8 +6,17 @@ services:
     container_name: ollama
     volumes:
       - ollama_data:/root/.ollama
+    env_file:
+      - path: .env.ollama
+        required: false
     networks:
       - pi_net
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
     cap_drop:
       - ALL
     security_opt:
