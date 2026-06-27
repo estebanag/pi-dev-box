@@ -13,6 +13,7 @@ workspace directory).
 ---
 
 # Deployment
+> The following assumes you're running docker in rootless mode.
 
 ## 1. Start Ollama and pull local model(s)
 Pull whichever models you want to use:
@@ -31,10 +32,9 @@ docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull 
 
 ## 2. Build pi
 Build the `pi` image the first time (or after any change to `Dockerfile.pi`).
-This bakes your host UID/GID into the image.
 
 ```sh
-DOCKER_UID=$(id -u) DOCKER_GID=$(id -g) docker compose -f docker-compose.pi.build.yml build pi
+docker compose -f docker-compose.pi.build.yml build pi
 ```
 
 ---
