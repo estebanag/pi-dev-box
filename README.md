@@ -13,7 +13,7 @@ workspace directory).
 ---
 
 # Deployment
-> The following assumes you're running docker in rootless mode.
+> The following assumes you're running Docker in rootless mode.
 
 ## 1. Start Ollama and pull local model(s)
 Pull whichever models you want to use:
