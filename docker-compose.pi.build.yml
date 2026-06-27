@@ -3,9 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.pi
-      args:
-        USER_UID: ${DOCKER_UID:-1000}
-        USER_GID: ${DOCKER_GID:-1000}
     container_name: pi
     read_only: true
     tmpfs:
