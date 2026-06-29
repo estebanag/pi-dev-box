@@ -6,6 +6,14 @@
       "apiKey": "ollama",
       "models": [
         {
+          "id": "ornith:35b-q8_0",
+          "reasoning": true
+        },
+        {
+          "id": "ornith:35b-q4_K_M",
+          "reasoning": true
+        },
+        {
           "id": "qwen3-coder-next:q8_0"
         },
         {

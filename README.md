@@ -18,6 +18,8 @@ workspace directory).
 ## 1. Start Ollama and pull local model(s)
 Pull whichever models you want to use:
 ```sh
+docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull ornith:35b-q8_0
+docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull ornith:35b-q4_K_M
 docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull qwen3-coder-next:q8_0
 docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull qwen3.6:35b-a3b-q8_0
 docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull qwen3.6:35b-a3b-q4_K_M
