@@ -43,6 +43,8 @@ model_list:
 
   # --- GitHub Copilot ---
   - model_name: copilot-gpt-5-5
+    model_info:
+      mode: responses
     litellm_params:
       model: github_copilot/gpt-5.5
 

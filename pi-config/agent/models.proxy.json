@@ -2,7 +2,7 @@
   "providers": {
     "litellm": {
       "baseUrl": "http://litellm:4000/v1",
-      "api": "openai-completions",
+      "api": "openai-responses",
       "apiKey": "litellm",
       "models": [
         {
