@@ -10,6 +10,9 @@ services:
     environment:
       - USER=ubuntu
       - HOME=/home/ubuntu
+      - UV_OFFLINE=1
+      - UV_NO_SYNC=1
+      - UV_PYTHON_DOWNLOADS=never
     volumes:
       - ${WORKSPACE_DIR:?WORKSPACE_DIR must be set in .env}:/workspace
       - ./pi-config:/home/ubuntu/.pi-defaults:ro
