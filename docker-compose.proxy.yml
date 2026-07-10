@@ -1,4 +1,4 @@
-x-litellm-image: &litellm-image litellm/litellm:1.88.0
+x-litellm-image: &litellm-image litellm/litellm:1.90.2
 
 services:
   litellm:
