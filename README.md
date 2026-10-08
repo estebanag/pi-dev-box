@@ -18,18 +18,7 @@ workspace directory).
 ## 1. Start Ollama and pull local model(s)
 Pull whichever models you want to use:
 ```sh
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull ornith:35b-q8_0
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull ornith:35b-q4_K_M
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull qwen3-coder-next:q8_0
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull qwen3.6:35b-a3b-q8_0
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull qwen3.6:35b-a3b-q4_K_M
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull qwen3.6:27b-q8_0
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull qwen3.6:27b-q4_K_M
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull gemma4:26b-a4b-it-q8_0
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull gemma4:26b-a4b-it-qat
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull gemma4:31b-it-q8_0
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull gemma4:31b-it-qat
-docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull gemma4:12b-it-qat
+docker compose -f docker-compose.ollama.yml --profile pull run --rm ollama-pull pull qwen3.8:27b-mtp-q4_K_M
 ```
 
 ## 2. Build pi
