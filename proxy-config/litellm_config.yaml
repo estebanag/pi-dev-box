@@ -1,12 +1,23 @@
+general_settings:
+  dangerously_permit_weak_or_unset_master_key: true
+  trusted_proxy_ranges: []
+
 model_list:
 
   # --- GitHub Copilot ---
-  - model_name: copilot-gpt-5-5
+  - model_name: copilot-gpt-5-6-sol
     model_info:
       mode: responses
     litellm_params:
-      model: github_copilot/gpt-5.5
+      model: github_copilot/gpt-5.6-sol
 
-  - model_name: copilot-claude-sonnet-4-6
+  - model_name: copilot-gpt-6-sol
+    model_info:
+      mode: responses
     litellm_params:
-      model: github_copilot/claude-sonnet-4.6
+      model: github_copilot/gpt-6-sol
+
+  - model_name: copilot-claude-sonnet-5
+    litellm_params:
+      model: github_copilot/claude-sonnet-5
+
