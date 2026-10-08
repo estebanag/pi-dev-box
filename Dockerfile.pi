@@ -53,6 +53,17 @@ ENV EDITOR=nvim
 
 RUN mkdir -p /home/ubuntu/.pi
 
+
+# --- Agent skills ---
+RUN git clone --depth 1 --branch v1.3.1 \
+      https://github.com/mattpocock/skills.git /tmp/ai-hero \
+    && git clone --depth 1 \
+      https://github.com/estebanag/python-skills.git /tmp/python-skills \
+    && mkdir -p /home/ubuntu/.agents/skills \
+    && cp -a /tmp/ai-hero/skills/. /home/ubuntu/.agents/skills/ \
+    && cp -a /tmp/python-skills/skills/. /home/ubuntu/.agents/skills/ \
+    && rm -rf /tmp/ai-hero /tmp/python-skills
+
 # --- nvim ---
 RUN curl -fLO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz \
   && tar -C /opt -xzf nvim-linux-x86_64.tar.gz \
