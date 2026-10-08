@@ -20,6 +20,16 @@ RUN apt-get update && apt-get install -y \
     fd-find \
   && rm -rf /var/lib/apt/lists/*
 
+# --- Extra packages ---
+RUN apt-get update && apt-get install -y \
+    python3-h5py \
+    python3-rasterio \
+    python3-gdal \
+    gdal-bin \
+    libgdal-dev \
+    libhdf5-dev \
+  && rm -rf /var/lib/apt/lists/*
+
 # --- HDF5 tools ---
 RUN apt-get update && apt-get install -y \
     hdf5-tools \
